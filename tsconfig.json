@@ -11,6 +11,7 @@
         ],
         "module": "commonjs",
         "declaration": true,
+        "sourceMap": true,
         "outDir": "./lib",
         "noImplicitAny": false,
         "forceConsistentCasingInFileNames": true,
