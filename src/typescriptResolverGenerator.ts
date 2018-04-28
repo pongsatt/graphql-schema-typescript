@@ -111,6 +111,22 @@ export class TSResolverGenerator {
         ]);
     }
 
+    private toResultType(type: any): String {
+        if(type){
+            const {kind, name, ofType} = type
+
+            if(kind === 'LIST'){
+                return `Array<${this.toResultType(ofType)}>`
+            } else if(ofType){
+                return this.toResultType(ofType)
+            }
+
+            return gqlScalarToTS(name, this.options.typePrefix)
+        }
+
+        return 'any'
+    }
+
     private generateObjectResolver(objectType: IntrospectionObjectType) {
         const typeResolverName = `${this.options.typePrefix}${objectType.name}TypeResolver`;
         const typeResolverBody: string[] = [];
@@ -150,8 +166,11 @@ export class TSResolverGenerator {
             // generate field type
             const fieldResolverName = `${objectType.name}To${uppercaseFisrtFieldName}Resolver`;
 
+            // generate result type
+            const resultType = this.toResultType(field.type)
+
             fieldResolversTypeDefs.push(...[
-                `export interface ${fieldResolverName}<TParent = any, TResult = any> {`,
+                `export interface ${fieldResolverName}<TParent = any, TResult = ${resultType}> {`,
                 // TODO: some strategy to support parent type and return type
                 `(parent: TParent, args: ${argsType}, context: ${this.contextType}, info: GraphQLResolveInfo): TResult;`,
                 '}',

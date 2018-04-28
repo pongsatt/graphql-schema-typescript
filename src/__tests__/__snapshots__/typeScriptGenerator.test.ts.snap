@@ -236,22 +236,22 @@ export interface GQLRootQueryTypeResolver<TParent = any> {
 export interface RootQueryToUsersArgs {
   input?: GQLUserFilter;
 }
-export interface RootQueryToUsersResolver<TParent = any, TResult = any> {
+export interface RootQueryToUsersResolver<TParent = any, TResult = Array<GQLUser>> {
   (parent: TParent, args: RootQueryToUsersArgs, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface RootQueryToUserResolver<TParent = any, TResult = any> {
+export interface RootQueryToUserResolver<TParent = any, TResult = GQLUser> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface RootQueryToProductsResolver<TParent = any, TResult = any> {
+export interface RootQueryToProductsResolver<TParent = any, TResult = Array<GQLIProduct>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
 export interface RootQueryToSearchArgs {
   key?: string;
 }
-export interface RootQueryToSearchResolver<TParent = any, TResult = any> {
+export interface RootQueryToSearchResolver<TParent = any, TResult = GQLSearchResult> {
   (parent: TParent, args: RootQueryToSearchArgs, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -265,31 +265,31 @@ export interface GQLUserTypeResolver<TParent = any> {
   activated?: UserToActivatedResolver<TParent>;
 }
 
-export interface UserToFirstNameResolver<TParent = any, TResult = any> {
+export interface UserToFirstNameResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToLastNameResolver<TParent = any, TResult = any> {
+export interface UserToLastNameResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToUsernameResolver<TParent = any, TResult = any> {
+export interface UserToUsernameResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToEmailResolver<TParent = any, TResult = any> {
+export interface UserToEmailResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToRoleResolver<TParent = any, TResult = any> {
+export interface UserToRoleResolver<TParent = any, TResult = GQLUserRole> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToProfilePictureResolver<TParent = any, TResult = any> {
+export interface UserToProfilePictureResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface UserToActivatedResolver<TParent = any, TResult = any> {
+export interface UserToActivatedResolver<TParent = any, TResult = boolean> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -311,39 +311,39 @@ export interface GQLProductATypeResolver<TParent = any> {
   ProductA6?: ProductAToProductA6Resolver<TParent>;
 }
 
-export interface ProductAToIdResolver<TParent = any, TResult = any> {
+export interface ProductAToIdResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToNameResolver<TParent = any, TResult = any> {
+export interface ProductAToNameResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToRelatedProductsResolver<TParent = any, TResult = any> {
+export interface ProductAToRelatedProductsResolver<TParent = any, TResult = Array<GQLIProduct>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA1Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA1Resolver<TParent = any, TResult = GQLProductScalar> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA2Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA2Resolver<TParent = any, TResult = GQLProductScalar> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA3Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA3Resolver<TParent = any, TResult = Array<GQLProductScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA4Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA4Resolver<TParent = any, TResult = Array<GQLProductScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA5Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA5Resolver<TParent = any, TResult = Array<GQLProductScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductAToProductA6Resolver<TParent = any, TResult = any> {
+export interface ProductAToProductA6Resolver<TParent = any, TResult = Array<GQLProductScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -360,43 +360,43 @@ export interface GQLProductScalarTypeResolver<TParent = any> {
   scalarBoolean2?: ProductScalarToScalarBoolean2Resolver<TParent>;
 }
 
-export interface ProductScalarToScalarString1Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarString1Resolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarString2Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarString2Resolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarInt1Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarInt1Resolver<TParent = any, TResult = number> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarInt2Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarInt2Resolver<TParent = any, TResult = number> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarFloat1Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarFloat1Resolver<TParent = any, TResult = number> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarFloat2Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarFloat2Resolver<TParent = any, TResult = number> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarID1Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarID1Resolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarID2Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarID2Resolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarBoolean1Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarBoolean1Resolver<TParent = any, TResult = boolean> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductScalarToScalarBoolean2Resolver<TParent = any, TResult = any> {
+export interface ProductScalarToScalarBoolean2Resolver<TParent = any, TResult = boolean> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -412,39 +412,39 @@ export interface GQLProductBTypeResolver<TParent = any> {
   ProductB6?: ProductBToProductB6Resolver<TParent>;
 }
 
-export interface ProductBToIdResolver<TParent = any, TResult = any> {
+export interface ProductBToIdResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToNameResolver<TParent = any, TResult = any> {
+export interface ProductBToNameResolver<TParent = any, TResult = string> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToRelatedProductsResolver<TParent = any, TResult = any> {
+export interface ProductBToRelatedProductsResolver<TParent = any, TResult = Array<GQLIProduct>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB1Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB1Resolver<TParent = any, TResult = GQLProductListScalar> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB2Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB2Resolver<TParent = any, TResult = GQLProductListScalar> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB3Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB3Resolver<TParent = any, TResult = Array<GQLProductListScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB4Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB4Resolver<TParent = any, TResult = Array<GQLProductListScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB5Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB5Resolver<TParent = any, TResult = Array<GQLProductListScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductBToProductB6Resolver<TParent = any, TResult = any> {
+export interface ProductBToProductB6Resolver<TParent = any, TResult = Array<GQLProductListScalar>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -471,83 +471,83 @@ export interface GQLProductListScalarTypeResolver<TParent = any> {
   listBoolean4?: ProductListScalarToListBoolean4Resolver<TParent>;
 }
 
-export interface ProductListScalarToListString1Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListString1Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListString2Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListString2Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListString3Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListString3Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListString4Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListString4Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListInt1Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListInt1Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListInt2Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListInt2Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListInt3Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListInt3Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListInt4Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListInt4Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListFloat1Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListFloat1Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListFloat2Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListFloat2Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListFloat3Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListFloat3Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListFloat4Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListFloat4Resolver<TParent = any, TResult = Array<number>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListID1Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListID1Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListID2Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListID2Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListID3Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListID3Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListID4Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListID4Resolver<TParent = any, TResult = Array<string>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListBoolean1Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListBoolean1Resolver<TParent = any, TResult = Array<boolean>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListBoolean2Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListBoolean2Resolver<TParent = any, TResult = Array<boolean>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListBoolean3Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListBoolean3Resolver<TParent = any, TResult = Array<boolean>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
-export interface ProductListScalarToListBoolean4Resolver<TParent = any, TResult = any> {
+export interface ProductListScalarToListBoolean4Resolver<TParent = any, TResult = Array<boolean>> {
   (parent: TParent, args: {}, context: any, info: GraphQLResolveInfo): TResult;
 }
 
@@ -558,7 +558,7 @@ export interface GQLRootMutationTypeResolver<TParent = any> {
 export interface RootMutationToCreateUserArgs {
   input?: GQLCreateUserInput;
 }
-export interface RootMutationToCreateUserResolver<TParent = any, TResult = any> {
+export interface RootMutationToCreateUserResolver<TParent = any, TResult = GQLUser> {
   (parent: TParent, args: RootMutationToCreateUserArgs, context: any, info: GraphQLResolveInfo): TResult;
 }
 "
