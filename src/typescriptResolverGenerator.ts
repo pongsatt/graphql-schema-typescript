@@ -167,7 +167,8 @@ export class TSResolverGenerator {
             const fieldResolverName = `${objectType.name}To${uppercaseFisrtFieldName}Resolver`;
 
             // generate result type
-            const resultType = this.toResultType(field.type);
+            let resultType = this.toResultType(field.type);
+            resultType = `${resultType}|Promise<${resultType}>`;
 
             fieldResolversTypeDefs.push(...[
                 `export interface ${fieldResolverName}<TParent = any, TResult = ${resultType}> {`,
